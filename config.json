@@ -1,0 +1,9 @@
+{
+    "openai_key": "",
+    "modules": [
+        "auth/login",
+        "user/user_main",
+        "admin/admin_main",
+        "petugas/petugas_main"
+    ]
+}

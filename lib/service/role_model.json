@@ -1,0 +1,10 @@
+{
+    "role": [
+        {
+            "name": "Admin"
+        },
+        {
+            "name": "Petugas"
+        }
+    ]
+}

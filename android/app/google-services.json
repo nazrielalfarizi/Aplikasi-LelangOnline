@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "1041294664301",
+    "firebase_url": "https://lelang-719a0-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "lelang-719a0",
+    "storage_bucket": "lelang-719a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041294664301:android:dc93aa7129f4b3293a9564",
+        "android_client_info": {
+          "package_name": "com.example.lelang_ujikom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041294664301-io514ce741jtpqt97svb5fge3ihob2cn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJAmn3uII73q1ji-nsHxG8ucQfA6F1lTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041294664301-io514ce741jtpqt97svb5fge3ihob2cn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041294664301:android:8d41a0b4109b72bd3a9564",
+        "android_client_info": {
+          "package_name": "com.example.lelanguji"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041294664301-io514ce741jtpqt97svb5fge3ihob2cn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJAmn3uII73q1ji-nsHxG8ucQfA6F1lTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041294664301-io514ce741jtpqt97svb5fge3ihob2cn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041294664301:android:574cbf5408ef0d9f3a9564",
+        "android_client_info": {
+          "package_name": "com.example.ujikom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041294664301-io514ce741jtpqt97svb5fge3ihob2cn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJAmn3uII73q1ji-nsHxG8ucQfA6F1lTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041294664301-io514ce741jtpqt97svb5fge3ihob2cn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+const appname = "Oleng App",
+    login = "Login",
+    welcome = "Hi, Welcome to",
+    email = "Email",
+    password = "Password",
+    credit = "@nazriel",
+    edit = "Edit",
+    remove = "Remove",
+    featured = "Feature",
+    _tanggal = "";

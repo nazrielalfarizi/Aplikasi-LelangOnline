@@ -36,13 +36,30 @@ class TambahPetugas extends StatelessWidget {
           actions: [
             controller.isLoading.value
                 ? LoadingIndicator()
-                : TextButton(
-                    onPressed: () async {
-                      await controller.signUpPetugas(context);
-                      Get.to(MainAdmin());
-                    },
-                    child: boldtext(
-                        text: "Simpan", color: Colors.greenAccent[700]))
+                : Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                        onPressed: () async {
+                          await controller.signUpPetugas(context);
+                          Get.to(MainAdmin());
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          primary: Colors.green,
+                          onPrimary: Colors.white,
+                        ),
+                        child:
+                            boldtext(text: 'Save', color: white, size: 15.0)),
+                  ),
+            // : TextButton(
+            //     onPressed: () async {
+            //       await controller.signUpPetugas(context);
+            //       Get.to(MainAdmin());
+            //     },
+            //     child: boldtext(
+            //         text: "Simpan", color: Colors.greenAccent[700]))
           ],
         ),
         body: Padding(

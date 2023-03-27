@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:lelang_ujikom/const/const.dart';
 import 'package:lelang_ujikom/screen/admin/main_admin.dart';
+import 'package:lelang_ujikom/screen/user/main_user.dart';
 import 'package:lelang_ujikom/screen/user/profile/profile_screen.dart';
 
 import '../../../controller/profile_controller.dart';
@@ -44,19 +45,43 @@ class _EditProfilState extends State<EditProfile> {
         ),
         title: boldtext(text: "Edit Data", color: fontGrey, size: 16.0),
         actions: [
-          TextButton(
-              onPressed: () async {
-                await controller.changeAuthPassword();
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+                onPressed: () async {
+                  await controller.changeAuthPassword();
 
-                await controller.updateProfile(
-                  nama: controller.namaController.text,
-                  alamat: controller.AlamatController.text,
-                  notelp: controller.noTelpController.text,
-                );
-                VxToast.show(context, msg: "Data di Update!");
-                Get.to(ProfileScreen());
-              },
-              child: boldtext(text: "Edit", color: Colors.greenAccent[700]))
+                  await controller.updateProfile(
+                    nama: controller.namaController.text,
+                    alamat: controller.AlamatController.text,
+                    notelp: controller.noTelpController.text,
+                  );
+                  VxToast.show(context, msg: "Data di Update!");
+                  Get.to(MainUser());
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  primary: Colors.green,
+                  onPrimary: Colors.white,
+                ),
+                child: boldtext(text: 'Save', color: white, size: 15.0)),
+          ),
+
+          // TextButton(
+          //     onPressed: () async {
+          //       await controller.changeAuthPassword();
+
+          //       await controller.updateProfile(
+          //         nama: controller.namaController.text,
+          //         alamat: controller.AlamatController.text,
+          //         notelp: controller.noTelpController.text,
+          //       );
+          //       VxToast.show(context, msg: "Data di Update!");
+          //       Get.to(MainUser());
+          //     },
+          //     child: boldtext(text: "Edit", color: Colors.greenAccent[700]))
         ],
       ),
       body: Padding(

@@ -22,7 +22,7 @@ class MainUser extends StatelessWidget {
     var navScreens = [
       const LelangUserScreen(),
       const HistoryLelangScreen(),
-       ProfileScreen(),
+      ProfileScreen(),
     ];
 
     var bottomNavbar = [
@@ -44,7 +44,7 @@ class MainUser extends StatelessWidget {
           icon: Image.asset(
             'assets/icons/profile.png',
             color: Colors.blueAccent,
-            width: 24,
+            width: 20,
           ),
           label: 'Profile'),
     ];

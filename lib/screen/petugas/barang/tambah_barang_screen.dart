@@ -10,8 +10,6 @@ import 'package:lelang_ujikom/const/const.dart';
 
 import '../../../components/product_image.dart';
 
-
-
 class TambahBarang extends StatelessWidget {
   const TambahBarang({super.key});
 

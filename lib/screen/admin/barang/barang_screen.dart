@@ -40,17 +40,27 @@ class BarangView extends StatelessWidget {
                             .format(DateTime.now()),
                         color: purpleColor)),
                 65.widthBox,
-                TextButton(
-                    onPressed: () async {
-                      await Get.find<LoginController>().SignOut(context);
-                      Get.offAll(() => const Login());
-                    },
-                    child:
-                        boldtext(text: 'Log Out', color: fontGrey, size: 15.0))
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                      onPressed: () async {
+                        await Get.find<LoginController>().SignOut(context);
+                        Get.offAll(() => const Login());
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        primary: Colors.red,
+                        onPrimary: Colors.white,
+                      ),
+                      child:
+                          boldtext(text: 'Log Out', color: white, size: 15.0)),
+                ),
               ],
             ),
             body: Container(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
                   Expanded(
@@ -77,6 +87,7 @@ class BarangView extends StatelessWidget {
                                 snapshot.data!.docs[index];
                             return InkWell(
                               child: Card(
+                                elevation: 5,
                                 child: ListTile(
                                   onTap: () {
                                     Get.to(() => BarangDetail(data: item));

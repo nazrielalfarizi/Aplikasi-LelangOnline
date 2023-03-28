@@ -4,7 +4,6 @@ import 'package:lelang_ujikom/const/const.dart';
 import 'package:lelang_ujikom/controller/barang_controller.dart';
 import 'package:lelang_ujikom/screen/admin/barang/barang_screen.dart';
 
-import '../../../controller/lelang_controller.dart';
 import '../../../controller/login_controller.dart';
 import '../../../widgets/normal_text.dart';
 import '../../admin/barang/edit_barang.dart';
@@ -12,23 +11,29 @@ import '../../admin/barang/tambah_barang.dart';
 import '../../login_screen.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'lelang_detail_screen.dart';
+import 'barang_detail_screen.dart';
 
-class LelangScreen extends StatelessWidget {
-  const LelangScreen({super.key});
+class BarangViewPetugas extends StatelessWidget {
+  const BarangViewPetugas({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<lelangController>(
-        init: lelangController(),
+    return GetBuilder<BarangController>(
+        init: BarangController(),
         builder: (controller) {
-          controller.view = this;
+          controller.viewPetugas = this;
 
           return Scaffold(
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                Get.to(() => const AddBarang());
+              },
+              child: const Icon(Icons.add),
+            ),
             appBar: AppBar(
               backgroundColor: Colors.white,
               automaticallyImplyLeading: false,
-              title: boldtext(text: 'Data Lelang', color: darkGrey, size: 16.0),
+              title: boldtext(text: 'Data Barang', color: darkGrey, size: 16.0),
               actions: [
                 Center(
                     child: normalText(
@@ -62,7 +67,7 @@ class LelangScreen extends StatelessWidget {
                   Expanded(
                     child: StreamBuilder<QuerySnapshot>(
                       stream: FirebaseFirestore.instance
-                          .collection("lelang")
+                          .collection("barang")
                           .snapshots(),
                       builder: (context, snapshot) {
                         if (snapshot.hasError) return const Text("Error");
@@ -86,10 +91,14 @@ class LelangScreen extends StatelessWidget {
                                 elevation: 5,
                                 child: ListTile(
                                   onTap: () {
-                                    Get.to(() => LelangDetail(data: item));
+                                    Get.to(
+                                        () => BarangDetailPetugas(data: item));
                                   },
                                   leading: Image.network(
                                     item["barang_image"][0],
+                                    width: 120,
+                                    height: 100,
+                                    fit: BoxFit.cover,
                                   ),
                                   title: boldtext(
                                       text: item["nama_barang"],
@@ -100,21 +109,14 @@ class LelangScreen extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       normalText(
-                                        text: "Harga Akhir : " +
-                                            item["harga_akhir"],
+                                        text: "Rp." + item["harga_awal"],
                                         color: Colors.redAccent[700],
                                       ),
                                       normalText(
-                                        text:
-                                            "Dibuka : " + item["tanggal_mulai"],
+                                        text: "Di Upload :" + item["tanggal"],
                                         color: darkGrey,
                                       ),
-                                      normalText(
-                                        text: "Ditutip : " +
-                                            item["tanggal_berakhir"],
-                                        color: darkGrey,
-                                      ),
-                                      item['status'] == 'Dibuka'
+                                      item['status'] == 'Dilelang'
                                           ? normalText(
                                               text: item['status'],
                                               color: Colors.green)
@@ -122,6 +124,42 @@ class LelangScreen extends StatelessWidget {
                                               text: item['status'],
                                               color: Colors.redAccent[700])
                                     ],
+                                  ),
+                                  trailing: VxPopupMenu(
+                                    menuBuilder: () => Column(
+                                      children: List.generate(
+                                        popupMenuTitles.length,
+                                        (i) => Padding(
+                                          padding: const EdgeInsets.all(12.0),
+                                          child: Row(
+                                            children: [
+                                              Icon(popupMenuIcons[i]),
+                                              10.widthBox,
+                                              normalText(
+                                                  text: popupMenuTitles[i],
+                                                  color: darkGrey)
+                                            ],
+                                          ).onTap(() {
+                                            switch (i) {
+                                              case 0:
+                                                Get.to(() => EditBarang(
+                                                      item: item,
+                                                    ));
+
+                                                break;
+                                              case 1:
+                                                controller
+                                                    .hapusBarang(item["id"]);
+                                                VxToast.show(context,
+                                                    msg: "Barang di Hapus!");
+                                                break;
+                                            }
+                                          }),
+                                        ),
+                                      ),
+                                    ).box.white.rounded.width(200).make(),
+                                    clickType: VxClickType.singleClick,
+                                    child: const Icon(Icons.more_vert_rounded),
                                   ),
                                 ),
                               ),

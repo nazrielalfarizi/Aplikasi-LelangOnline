@@ -46,7 +46,10 @@ class BarangDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  boldtext(text: "${data['nama_barang']}", color: fontGrey, size: 30.0),
+                  boldtext(
+                      text: "${data['nama_barang']}",
+                      color: fontGrey,
+                      size: 30.0),
                   10.heightBox,
                   normalText(
                       text: "Di Upload :" + " ${data['tanggal']}",
@@ -59,9 +62,11 @@ class BarangDetail extends StatelessWidget {
                       size: 18.0),
                   10.heightBox,
                   boldtext(text: "Deskripsi", color: fontGrey, size: 20.0),
-                  10.heightBox,
+                  5.heightBox,
                   normalText(
-                      text: "${data['deskripsi_barang']}", color: fontGrey, size: 16.0)
+                      text: "${data['deskripsi_barang']}",
+                      color: fontGrey,
+                      size: 16.0)
                 ],
               ),
             ),

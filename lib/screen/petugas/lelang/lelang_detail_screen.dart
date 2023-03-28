@@ -11,6 +11,14 @@ class LelangDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.assignment,
+          color: white,
+        ),
+        backgroundColor: Colors.redAccent,
+      ),
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -21,7 +29,7 @@ class LelangDetail extends StatelessWidget {
             color: darkGrey,
           )),
         ),
-        title: boldtext(text: "Detail Barang", color: fontGrey, size: 16.0),
+        title: boldtext(text: "Detail Lelang", color: fontGrey, size: 16.0),
       ),
       // bottomNavigationBar: SizedBox(
       //   height: 60,
@@ -51,9 +59,8 @@ class LelangDetail extends StatelessWidget {
                     fit: BoxFit.cover,
                   );
                 }),
-            10.heightBox,
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -61,19 +68,32 @@ class LelangDetail extends StatelessWidget {
                       text: "${data['nama_barang']}",
                       color: fontGrey,
                       size: 30.0),
-                  10.heightBox,
+                  5.heightBox,
                   normalText(
-                      text: "Dibuka :" + " ${data['tanggal']}",
+                      text: "Dibuka :" + " ${data['tanggal_mulai']}",
                       color: fontGrey,
-                      size: 18.0),
+                      size: 16.0),
+                  normalText(
+                      text: "Ditutup :" + " ${data['tanggal_berakhir']}",
+                      color: fontGrey,
+                      size: 16.0),
                   10.heightBox,
                   normalText(
                       text: "Harga Awal :" + "  Rp." + "${data['harga_awal']}",
-                      color: Colors.redAccent[700],
+                      color: Colors.green,
                       size: 18.0),
-                  10.heightBox,
+                  normalText(
+                      text:
+                          "Harga Akhir :" + "  Rp." + "${data['harga_akhir']}",
+                      color: Colors.red,
+                      size: 18.0),
+                  normalText(
+                      text: "Penawar :" + "${data['penawar']}",
+                      color: fontGrey,
+                      size: 18.0),
+                  5.heightBox,
                   boldtext(text: "Deskripsi", color: fontGrey, size: 20.0),
-                  10.heightBox,
+                  5.heightBox,
                   normalText(
                       text: "${data['deskripsi_barang']}",
                       color: fontGrey,

@@ -6,6 +6,7 @@ import 'package:lelang_ujikom/controller/main_admin_controller.dart';
 import 'package:lelang_ujikom/screen/admin/barang/barang_screen.dart';
 import 'package:lelang_ujikom/screen/admin/petugas/petugas_screen.dart';
 import 'package:lelang_ujikom/screen/login_screen.dart';
+import 'package:lelang_ujikom/screen/petugas/barang/barang_screen.dart';
 import 'package:lelang_ujikom/widgets/normal_text.dart';
 
 import '../../controller/main_petugas_controller.dart';
@@ -19,7 +20,7 @@ class MainPetugas extends StatelessWidget {
     var controller = Get.put(MainPetugasController());
 
     var navScreens = [
-      const BarangView(),
+      const BarangViewPetugas(),
       const LelangScreen(),
     ];
 

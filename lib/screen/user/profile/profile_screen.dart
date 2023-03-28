@@ -51,6 +51,7 @@ class ProfileScreen extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
+                        
                       ),
                       primary: Colors.red,
                       onPrimary: Colors.white,

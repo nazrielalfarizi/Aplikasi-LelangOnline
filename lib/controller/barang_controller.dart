@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lelang_ujikom/const/const.dart';
+import 'package:lelang_ujikom/screen/petugas/barang/barang_screen.dart';
 import 'package:path/path.dart';
 
 import '../const/firebase_const.dart';
@@ -15,6 +16,7 @@ import '../screen/admin/barang/tambah_barang.dart';
 
 class BarangController extends GetxController {
   BarangView? view;
+  BarangViewPetugas? viewPetugas;
   var isLoading = false.obs;
 
   var id = TextEditingController();
@@ -64,7 +66,8 @@ class BarangController extends GetxController {
       'tanggal': TanggalBarangController.text,
       'harga_awal': HargaAwalController.text,
       'deskripsi_barang': DeskripsiBarangController.text,
-      'barang_image': FieldValue.arrayUnion(barangImageLinks)
+      'barang_image': FieldValue.arrayUnion(barangImageLinks),
+      'status': 'Belum Di Lelang'
     });
     isLoading(false);
 

@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lelang_ujikom/const/colors.dart';
 import 'package:lelang_ujikom/const/const.dart';
-import 'package:lelang_ujikom/screen/Api/file_handle_api.dart';
-import 'package:lelang_ujikom/screen/Api/pdf_invoice_api.dart';
-import 'package:lelang_ujikom/widgets/normal_text.dart';
-import 'package:open_file/open_file.dart';
 
-import '../../../models/invoice.dart';
+import 'package:lelang_ujikom/widgets/normal_text.dart';
+
 
 class LelangDetail extends StatelessWidget {
   final dynamic data;

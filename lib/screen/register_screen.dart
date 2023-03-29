@@ -85,6 +85,13 @@ class Register extends StatelessWidget {
                                             ),
                                           ),
                                           onChanged: (value) {},
+                                          validator: (value) {
+                                            if (value == null ||
+                                                value.isEmpty) {
+                                              return 'Mohon Masukan Nama.';
+                                            }
+                                            return null;
+                                          },
                                         ),
                                         10.heightBox,
                                         TextFormField(
@@ -119,6 +126,13 @@ class Register extends StatelessWidget {
                                             ),
                                           ),
                                           onChanged: (value) {},
+                                          validator: (value) {
+                                            if (value == null ||
+                                                value.isEmpty) {
+                                              return 'Mohon Masukan Alamat.';
+                                            }
+                                            return null;
+                                          },
                                         ),
                                         10.heightBox,
                                         TextFormField(
@@ -137,6 +151,13 @@ class Register extends StatelessWidget {
                                             ),
                                           ),
                                           onChanged: (value) {},
+                                          validator: (value) {
+                                            if (value == null ||
+                                                value.isEmpty) {
+                                              return 'Mohon Masukan Email.';
+                                            }
+                                            return null;
+                                          },
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
@@ -157,6 +178,13 @@ class Register extends StatelessWidget {
                                               ),
                                             ),
                                             onChanged: (value) {},
+                                            validator: (value) {
+                                              if (value == null ||
+                                                  value.isEmpty) {
+                                                return 'Mohon Masukan Password.';
+                                              }
+                                              return null;
+                                            },
                                           ),
                                         ),
                                         const SizedBox(height: 16.0),

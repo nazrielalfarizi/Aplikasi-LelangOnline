@@ -101,8 +101,6 @@ class TambahPetugas extends StatelessWidget {
                   decoration: const InputDecoration(
                       labelText: "Alamat", hintText: "Alamat"),
                 ),
-                roleDropdown("Role", controller.roleList, controller.rolevalue,
-                    controller)
               ],
             ),
           ),

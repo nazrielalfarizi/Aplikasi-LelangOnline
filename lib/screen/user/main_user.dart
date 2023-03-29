@@ -21,8 +21,8 @@ class MainUser extends StatelessWidget {
 
     var navScreens = [
       const LelangUserScreen(),
-      const HistoryLelangScreen(),
-      ProfileScreen(),
+      HistoryLelangScreen(),
+      // ProfileScreen(),
     ];
 
     var bottomNavbar = [
@@ -40,13 +40,13 @@ class MainUser extends StatelessWidget {
             width: 24,
           ),
           label: 'History Lelang'),
-      BottomNavigationBarItem(
-          icon: Image.asset(
-            'assets/icons/profile.png',
-            color: Colors.blueAccent,
-            width: 20,
-          ),
-          label: 'Profile'),
+      // BottomNavigationBarItem(
+      //     icon: Image.asset(
+      //       'assets/icons/profile.png',
+      //       color: Colors.blueAccent,
+      //       width: 20,
+      //     ),
+      //     label: 'Profile'),
     ];
 
     return Scaffold(

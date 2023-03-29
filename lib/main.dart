@@ -3,11 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lelang_ujikom/screen/admin/main_admin.dart';
 import 'package:lelang_ujikom/screen/login_screen.dart';
-import 'package:lelang_ujikom/screen/petugas/main_petugas.dart';
-import 'package:lelang_ujikom/screen/register_screen.dart';
-import 'package:lelang_ujikom/screen/user/main_user.dart';
+
+import 'screen/admin/main_admin.dart';
+import 'screen/petugas/main_petugas.dart';
+import 'screen/user/main_user.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

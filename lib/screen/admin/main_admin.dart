@@ -5,6 +5,7 @@ import 'package:lelang_ujikom/const/colors.dart';
 import 'package:lelang_ujikom/controller/main_admin_controller.dart';
 import 'package:lelang_ujikom/screen/admin/petugas/petugas_screen.dart';
 import 'package:lelang_ujikom/screen/login_screen.dart';
+import 'package:lelang_ujikom/screen/petugas/lelang/lelang_screen.dart';
 import 'package:lelang_ujikom/widgets/normal_text.dart';
 
 import 'barang/barang_screen.dart';
@@ -19,6 +20,7 @@ class MainAdmin extends StatelessWidget {
     var navScreens = [
       const BarangView(),
       const PetugasScreen(),
+      const LelangScreen()
     ];
 
     var bottomNavbar = [
@@ -36,6 +38,13 @@ class MainAdmin extends StatelessWidget {
             width: 24,
           ),
           label: 'Petugas'),
+      BottomNavigationBarItem(
+          icon: Image.asset(
+            'assets/icons/lelang.png',
+            color: Colors.blueAccent,
+            width: 24,
+          ),
+          label: 'Lelang'),
     ];
 
     return Scaffold(

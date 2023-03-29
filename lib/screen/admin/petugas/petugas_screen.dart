@@ -74,7 +74,7 @@ class PetugasScreen extends StatelessWidget {
                         if (snapshot.hasError) return const Text("Error");
                         if (snapshot.data == null) return Container();
                         if (snapshot.data!.docs.isEmpty) {
-                          return const Text("No Data");
+                          return Center(child: const Text("Tidak ada Petugas"));
                         }
                         final data = snapshot.data!;
                         return ListView.builder(

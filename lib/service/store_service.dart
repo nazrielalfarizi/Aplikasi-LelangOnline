@@ -18,4 +18,11 @@ class StoreService {
         .where('email', isEqualTo: email)
         .get();
   }
+
+  static getHistory(email) {
+    return firestore
+        .collection('history_lelang')
+        .where('penawar', isEqualTo: email)
+        .get();
+  }
 }

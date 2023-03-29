@@ -124,7 +124,7 @@ class Login extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       const Text(
-                                        "Don’t have an Account ? ",
+                                        "Belum Punya Akun ? ",
                                         style:
                                             TextStyle(color: Color(0xFF6F35A5)),
                                       ),

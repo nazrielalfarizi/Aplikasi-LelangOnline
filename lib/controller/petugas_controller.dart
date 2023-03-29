@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:lelang_ujikom/models/role_model.dart';
+import 'package:lelang_ujikom/components/role_model.dart';
 import 'package:lelang_ujikom/screen/admin/petugas/petugas_screen.dart';
 import 'package:lelang_ujikom/screen/admin/petugas/tambah_petugas.dart';
 import 'package:lelang_ujikom/screen/login_screen.dart';
@@ -73,7 +73,7 @@ class PetugasController extends GetxController {
       'password': passwordController.text,
       'notelp': noTelpController.text,
       'alamat': alamatController.text,
-      'role': rolevalue.value
+      'role': 'Petugas'
     });
     VxToast.show(context, msg: "Petugas Berhasil Ditambahkan!");
   }

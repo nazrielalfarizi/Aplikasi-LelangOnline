@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:lelang_ujikom/screen/admin/main_admin.dart';
-import 'package:lelang_ujikom/screen/petugas/main_petugas.dart';
-import 'package:lelang_ujikom/screen/register_screen.dart';
-import 'package:lelang_ujikom/screen/user/main_user.dart';
 
 import '../const/const.dart';
+import '../screen/admin/main_admin.dart';
 import '../screen/login_screen.dart';
+import '../screen/petugas/main_petugas.dart';
+import '../screen/register_screen.dart';
+import '../screen/user/main_user.dart';
 
 class LoginController extends GetxController {
   final _auth = FirebaseAuth.instance;

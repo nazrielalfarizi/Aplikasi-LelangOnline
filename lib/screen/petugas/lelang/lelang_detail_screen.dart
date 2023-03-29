@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lelang_ujikom/const/colors.dart';
 import 'package:lelang_ujikom/const/const.dart';
+import 'package:lelang_ujikom/screen/Api/file_handle_api.dart';
+import 'package:lelang_ujikom/screen/Api/pdf_invoice_api.dart';
 import 'package:lelang_ujikom/widgets/normal_text.dart';
+import 'package:open_file/open_file.dart';
+
+import '../../../models/invoice.dart';
 
 class LelangDetail extends StatelessWidget {
   final dynamic data;
@@ -12,12 +17,20 @@ class LelangDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async {
+          // final invoice = Invoice(
+
+          // );
+
+          // final pdfFile = await PdfInvoiceApi.generate(invoice);
+
+          // FileHandleApi.openFile(pdfFile);
+        },
+        backgroundColor: Colors.redAccent,
         child: const Icon(
           Icons.assignment,
           color: white,
         ),
-        backgroundColor: Colors.redAccent,
       ),
       appBar: AppBar(
         leading: IconButton(
